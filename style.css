@@ -1,0 +1,140 @@
+body{
+    background: linear-gradient(to right, #00aaff, #9b2572);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+nav{
+    text-align: center;
+    font-size:2rem;
+    margin-top:2.5rem;
+}
+h1{
+    padding:1rem;
+    color:cornsilk;
+}
+.caption1{
+    margin: auto;
+    width:90vw;
+    text-align: center;
+   color: rgb(189, 196, 209);
+   padding:1rem;
+   border-radius: 1rem;
+   
+}
+.banner{
+    width:100%;
+    height: 100vh;
+    text-align: center;
+    overflow:hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    top:9%;
+    width:40vw;
+    height:50vh;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autorun 16s linear infinite ;
+    z-index: 1000;
+}
+@keyframes autorun {
+    from{
+        transform: perspective(1000px)  rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: perspective(1000px)  rotateX(0deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(1100px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius:2rem;
+  
+}
+.caption2{
+    position: relative;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto;
+    top:-25vh;
+    width:85vw;
+    color:lightblue;
+}
+
+
+.container{
+    width:98vw;
+    gap:5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.car img{
+    border: none;
+    border-radius:1rem;
+   
+}
+.car{
+  text-align: center;
+    color: white;
+    cursor: pointer;
+}
+p{
+    margin-top:2rem;
+    color: transparent;
+}
+.car:hover p{
+    color: white;
+}
+
+.car:hover img{
+    scale:1.2;
+}
+
+@media (max-width:520px){
+    .caption1{
+        width: 70vw;
+        margin-top:2.9rem;
+        font-size:1rem
+    }
+   
+    .name{
+        margin-top:5rem;
+    }
+    .banner{
+        height: 90vh;
+    }
+    .banner .slider{
+        top:6%;
+        width:120vw;
+        height:40vh;
+    }
+    nav{
+        text-align: center;
+        font-size:1rem;
+        margin-top:2.5rem;
+    }
+    .caption2{
+        font-size:0.9rem;
+        top:-40vh;
+        width:90vw;
+    }
+   
+.container{
+    gap:2.5rem;
+    position: relative;
+    top:-25vh;
+}
+
+}
